@@ -1,0 +1,63 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: miniluca <theminiluca@gmail.com>
+Date: Thu, 27 Jun 2024 17:43:41 +0900
+Subject: [PATCH] encoding error
+
+
+diff --git a/src/main/java/org/bukkit/command/defaults/HelpCommand.java b/src/main/java/org/bukkit/command/defaults/HelpCommand.java
+index aa359e4a7da73065c5a43417106d26a854f9d799..3138feba278177427aa41791a1a15908d74d5807 100644
+--- a/src/main/java/org/bukkit/command/defaults/HelpCommand.java
++++ b/src/main/java/org/bukkit/command/defaults/HelpCommand.java
+@@ -165,7 +165,7 @@ public class HelpCommand extends VanillaCommand {
+ 
+     /**
+      * Computes the Dameraur-Levenshtein Distance between two strings. Adapted
+-     * from the algorithm at <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Wikipedia: Damerau–Levenshtein distance</a>
++     * from the algorithm at <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein-distance">Wikipedia: Damerau_Levenshtein distance</a>
+      *
+      * @param s1 The first string being compared.
+      * @param s2 The second string being compared.
+diff --git a/src/main/java/org/bukkit/map/MinecraftFont.java b/src/main/java/org/bukkit/map/MinecraftFont.java
+index 9ec8d10fefb698a3811dd5d4c5ce322dabaca7ae..28bc12bc5cbbef278e09a669c1763e27cd87aca3 100644
+--- a/src/main/java/org/bukkit/map/MinecraftFont.java
++++ b/src/main/java/org/bukkit/map/MinecraftFont.java
+@@ -14,7 +14,7 @@ public class MinecraftFont extends MapFont {
+         "\u00C7\u00FC\u00E9\u00E2\u00E4\u00E0\u00E5\u00E7" + // Çüéâäàåç
+         "\u00EA\u00EB\u00E8\u00EF\u00EE\u00EC\u00C4\u00C5" + // êëèïîìÄÅ
+         "\u00C9\u00E6\u00C6\u00F4\u00F6\u00F2\u00FB\u00F9" + // ÉæÆôöòûù
+-        "\u00FF\u00D6\u00DC\u00F8\u00A3\u00D8\u00D7\u0191" + // ÿÖÜø£Ø×ƒ
++        "\u00FF\u00D6\u00DC\u00F8\u00A3\u00D8\u00D7\u0191" + // ÿÖÜø£Ø×
+         "\u00E1\u00ED\u00F3\u00FA\u00F1\u00D1\u00AA\u00BA" + // áíóúñÑªº
+         "\u00BF\u00AE\u00AC\u00BD\u00BC\u00A1\u00AB\u00BB";  // ¿®¬½¼¡«»
+ 
+@@ -146,7 +146,7 @@ public class MinecraftFont extends MapFont {
+         /* | */  {1,1,1,0,1,1,1,0},
+         /* } */  {3,4,4,8,4,4,3,0},
+         /* ~ */  {38,25,0,0,0,0,0,0},
+-        /* ⌂ */  {0,0,4,10,17,17,31,0},
++        /* */  {0,0,4,10,17,17,31,0},
+         /* Ç */  {14,17,1,1,17,14,16,12},
+         /* ü */  {10,0,17,17,17,17,30,0},
+         /* é */  {24,0,14,17,31,1,30,0},
+@@ -178,7 +178,7 @@ public class MinecraftFont extends MapFont {
+         /* £ */  {12,18,2,15,2,2,31,0},
+         /* Ø */  {14,17,25,21,19,17,14,0},
+         /* × */  {0,0,5,2,5,0,0,0},
+-        /* ƒ */  {8,20,4,14,4,4,5,2},
++        /*  */  {8,20,4,14,4,4,5,2},
+         /* á */  {24,0,14,16,30,17,30,0},
+         /* í */  {3,0,1,1,1,1,1,0},
+         /* ó */  {24,0,14,17,17,17,14,0},
+diff --git a/src/main/java/org/bukkit/util/noise/SimplexNoiseGenerator.java b/src/main/java/org/bukkit/util/noise/SimplexNoiseGenerator.java
+index b052f3c39435774e1a66e772aeafeb733282eb4f..84ad03ee8b9d8a594645b0ed0f04d6b90b8056dc 100644
+--- a/src/main/java/org/bukkit/util/noise/SimplexNoiseGenerator.java
++++ b/src/main/java/org/bukkit/util/noise/SimplexNoiseGenerator.java
+@@ -392,7 +392,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
+         // To find out which of the 24 possible simplices we're in, we need to
+         // determine the magnitude ordering of x0, y0, z0 and w0.
+         // The method below is a good way of finding the ordering of x,y,z,w and
+-        // then find the correct traversal order for the simplex we’re in.
++        // then find the correct traversal order for the simplex we're in.
+         // First, six pair-wise comparisons are performed between each possible pair
+         // of the four coordinates, and the results are used to add up binary bits
+         // for an integer index.
